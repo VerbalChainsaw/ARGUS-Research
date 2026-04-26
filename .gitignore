@@ -1,0 +1,7 @@
+# Code lives in a separate repository (argus/ has its own .git)
+argus/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+*.swp
