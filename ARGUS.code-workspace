@@ -1,0 +1,29 @@
+{
+  "folders": [
+    {
+      "name": "ARGUS",
+      "path": "."
+    }
+  ],
+  "settings": {
+    "python.analysis.extraPaths": [
+      "${workspaceFolder}/argus/src"
+    ],
+    "python.testing.cwd": "${workspaceFolder}/argus",
+    "files.watcherExclude": {
+      "**/argus/.venv/**": true,
+      "**/.git/objects/**": true
+    },
+    "search.exclude": {
+      "**/argus/.venv": true,
+      "**/argus/.pytest_cache": true
+    }
+  },
+  "extensions": {
+    "recommendations": [
+      "ms-python.python",
+      "charliermarsh.ruff",
+      "ms-python.debugpy"
+    ]
+  }
+}

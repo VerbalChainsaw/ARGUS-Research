@@ -1,0 +1,19 @@
+ARGUS-Rerank
+Copyright 2026 The ARGUS Authors.
+
+This product includes software developed at the ARGUS / PRC project.
+See https://github.com/VerbalChainsaw/argus-rerank for the canonical source.
+
+The intellectual lineage for "dependence-aware corroboration" draws on the
+truth-discovery literature, in particular:
+
+  - Yin, Han, Yu (2008). Truth Discovery with Multiple Conflicting Information
+    Providers on the Web. IEEE TKDE 20(6).
+  - Dong, Berti-Equille, Srivastava (2009). Integrating Conflicting Data:
+    The Role of Source Dependence. PVLDB 2(1).
+  - Pochampally et al. (2014). Fusing Data with Correlations. SIGMOD 2014.
+
+and the forensic-evidence Bayesian-network tradition (Schum 1994;
+Fenton, Neil & Lagnado 2013).
+
+This software does not imply endorsement by any of the cited authors or works.

@@ -1,7 +1,15 @@
-# Code lives in a separate repository (argus/ has its own .git)
-argus/
-
 # OS / editor
 .DS_Store
 Thumbs.db
 *.swp
+
+# Argus-Rerank package (see argus/.gitignore for full Python ignores)
+argus/.venv/
+argus/**/__pycache__/
+argus/.pytest_cache/
+argus/.mypy_cache/
+argus/.ruff_cache/
+argus/dist/
+argus/build/
+argus/*.egg-info/
+argus/htmlcov/

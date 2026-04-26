@@ -1,7 +1,5 @@
-# ARGUS Research (desktop folder)
+# ARGUS Research (folder)
 
-Editor and task setup for the **`argus`** package live in-repo:
+**Open `ARGUS.code-workspace` at the repo root** (same folder as `ARGUS_CODEX.md` and `argus/`). One window has research + code.
 
-**→ [argus/docs/WORKSPACE.md](argus/docs/WORKSPACE.md)** (code: **ARGUS-Rerank**, import `argus_rerank`, PyPI `argus-rerank`)
-
-Quick start: open **`argus/ARGUS.code-workspace`** (inside the `argus` folder), then follow that doc.
+Details: **[argus/docs/WORKSPACE.md](argus/docs/WORKSPACE.md)** · AI context: **[AGENTS.md](AGENTS.md)**.

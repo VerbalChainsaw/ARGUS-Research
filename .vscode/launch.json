@@ -1,0 +1,43 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "argus-rerank: pytest (all)",
+      "type": "debugpy",
+      "request": "launch",
+      "module": "pytest",
+      "args": ["-ra", "tests"],
+      "cwd": "${workspaceFolder}/argus",
+      "console": "integratedTerminal",
+      "justMyCode": false
+    },
+    {
+      "name": "argus-rerank: pytest (current file)",
+      "type": "debugpy",
+      "request": "launch",
+      "module": "pytest",
+      "args": ["-ra", "${file}"],
+      "cwd": "${workspaceFolder}/argus",
+      "console": "integratedTerminal",
+      "justMyCode": false
+    },
+    {
+      "name": "argus-rerank: run current file",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${file}",
+      "cwd": "${workspaceFolder}/argus",
+      "console": "integratedTerminal",
+      "justMyCode": true
+    },
+    {
+      "name": "argus-rerank: examples/ftx_demo.py",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}/argus/examples/ftx_demo.py",
+      "cwd": "${workspaceFolder}/argus",
+      "console": "integratedTerminal",
+      "justMyCode": true
+    }
+  ]
+}

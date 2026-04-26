@@ -1,0 +1,123 @@
+[build-system]
+requires = ["hatchling>=1.24"]
+build-backend = "hatchling.build"
+
+[project]
+name = "argus-rerank"
+version = "0.1.0"
+description = "Dependence-aware reranking for retrieval-augmented generation. Anti-double-counting of correlated evidence."
+readme = "README.md"
+license = { text = "Apache-2.0" }
+requires-python = ">=3.10"
+authors = [
+    { name = "The ARGUS Authors" },
+]
+keywords = [
+    "rag",
+    "retrieval-augmented-generation",
+    "reranking",
+    "truth-discovery",
+    "dependence-aware",
+    "calibration",
+    "argus-rerank",
+    "prc",
+]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: Apache Software License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Topic :: Text Processing :: Linguistic",
+]
+dependencies = [
+    "pydantic>=2.6,<3",
+    "numpy>=1.24",
+    "scikit-learn>=1.3",
+    "datasketch>=1.6",
+    "networkx>=3.1",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.4",
+    "pytest-cov>=4.1",
+    "ruff>=0.6",
+    "mypy>=1.10",
+    "build>=1.2",
+    "debugpy>=1.8",
+]
+mcp = [
+    "mcp>=1.0",
+]
+docs = [
+    "mkdocs-material>=9.5",
+    "mkdocstrings[python]>=0.25",
+]
+
+[project.urls]
+Homepage = "https://github.com/VerbalChainsaw/argus-rerank"
+Documentation = "https://github.com/VerbalChainsaw/argus-rerank#readme"
+Issues = "https://github.com/VerbalChainsaw/argus-rerank/issues"
+Changelog = "https://github.com/VerbalChainsaw/argus-rerank/blob/main/CHANGELOG.md"
+
+[project.scripts]
+argus-rerank = "argus_rerank.cli:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/argus_rerank"]
+
+[tool.hatch.build.targets.sdist]
+include = [
+    "src",
+    "tests",
+    "README.md",
+    "LICENSE",
+    "NOTICE",
+    "CHANGELOG.md",
+    "pyproject.toml",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra --strict-markers"
+markers = [
+    "slow: marks tests as slow (deselect with '-m \"not slow\"')",
+]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+
+[tool.ruff.lint]
+select = [
+    "E",   # pycodestyle errors
+    "W",   # pycodestyle warnings
+    "F",   # pyflakes
+    "I",   # isort
+    "B",   # flake8-bugbear
+    "UP",  # pyupgrade
+    "N",   # pep8-naming
+    "SIM", # flake8-simplify
+]
+ignore = [
+    "E501", # line length handled by formatter
+]
+
+[tool.ruff.lint.per-file-ignores]
+# scikit-learn convention: X for feature matrix, C for regularization strength.
+"src/argus_rerank/calibration.py" = ["N803", "N806"]
+"tests/*" = ["B011", "N803", "N806"]
+
+[tool.mypy]
+python_version = "3.10"
+strict = true
+warn_unused_ignores = true
+warn_return_any = true
+no_implicit_optional = true
+ignore_missing_imports = true
