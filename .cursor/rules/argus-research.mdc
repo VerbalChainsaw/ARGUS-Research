@@ -1,0 +1,18 @@
+---
+description: Read ARGUS research before changing argus/ code; names and scope
+alwaysApply: true
+---
+
+# ARGUS — research before code
+
+**Full detail:** [AGENTS.md](AGENTS.md) at repo root (authoritative).
+
+Before substantive edits to **`argus/src/`** or behavior of **`argus_rerank`**, consult:
+
+1. **`ARGUS_CODEX.md`**
+2. **`argus/docs/codex/`** (split Codex; grep-friendly)
+3. **PDFs / bundle zip** in this repo when the Codex references them
+
+**Package:** `argus_rerank` · PyPI/CLI `argus-rerank` · code under `argus/src/argus_rerank/`. **Scope:** Wedge 1 (dependence-aware reranker) only — do not grow into “full ARGUS” in this package without Codex/roadmap change.
+
+**Claims:** follow Codex **§3.10** in docstrings and docs (no casual “theorem” / overstated claims).
